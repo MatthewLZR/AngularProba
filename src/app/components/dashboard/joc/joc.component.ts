@@ -8,7 +8,14 @@ import { JocService } from 'src/app/services/joc.service';
 })
 export class JocComponent implements OnInit {
 
-  constructor(jocservice:JocService) { }
+  llistaJocs:any;
+
+  constructor( private jocservice:JocService) { 
+    this.jocservice.getJocs().subscribe(data=>{
+    this.llistaJocs=data;
+    });
+  }
+
 
   ngOnInit(): void {
   }
