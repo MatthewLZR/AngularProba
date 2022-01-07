@@ -11,6 +11,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LlistaComponent } from './components/dashboard/llista/llista.component';
 import { CardComponent } from './components/dashboard/card/card.component';
 import { PageNotFoundComponent } from './components/dashboard/page-not-found/page-not-found.component';
+import { CrearJocComponent } from './components/dashboard/crear-joc/crear-joc.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { PageNotFoundComponent } from './components/dashboard/page-not-found/pag
     LlistaComponent,
     CardComponent,
     PageNotFoundComponent,
+    CrearJocComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatSliderModule,
+    FormsModule,
     NoopAnimationsModule
   ],
   providers: [],
