@@ -2,11 +2,11 @@
    <div class="col-4">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">{{title}}</h5>
-              <p class="card-text">genere: {{genre}}</p>
-              <p class="card-text">descripció: {{description}}</p>
-              <p class="card-text">url: {{image_url}}</p>
-              <button class="btn btn-primary" routerLink="joc/{{this.id}}">Detalls</button>
+              <h5 class="card-title">{{game.title}}</h5>
+              <p class="card-text">genere: {{game.genre}}</p>
+              <p class="card-text">descripció: {{game.description}}</p>
+              <p class="card-text">url: {{game.image_url}}</p>
+              <button class="btn btn-primary" routerLink="joc/{{this.game.id}}">Detalls</button>
             </div>
           </div>
         </div>

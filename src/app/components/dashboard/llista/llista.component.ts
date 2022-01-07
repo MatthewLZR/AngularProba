@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Joc } from 'src/app/models/joc.model';
 import { JocService } from 'src/app/services/joc.service';
 
 @Component({
@@ -7,11 +8,11 @@ import { JocService } from 'src/app/services/joc.service';
   styleUrls: ['./llista.component.css']
 })
 export class LlistaComponent implements OnInit {
-  llistaJocs:any;
+  llistaJocs: Joc[] = [];
   
   constructor( private jocservice:JocService) { 
     this.jocservice.getJocs().subscribe(data=>{
-    this.llistaJocs=data;
+    this.llistaJocs=data; 
     });
   }
 
