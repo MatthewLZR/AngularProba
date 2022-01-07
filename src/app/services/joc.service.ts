@@ -13,4 +13,8 @@ export class JocService {
     const URL= "http://localhost:3000/game";
     return this.http.get(URL);
   }
+  getJoc(id:number):Observable<any>{
+    const URL= "http://localhost:3000/game/"+id;
+    return this.http.get(URL);
+  }
 }

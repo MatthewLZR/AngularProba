@@ -12,13 +12,13 @@ const routes: Routes = [
 
   {path:'dashboard',component:DashboardComponent, children:[
     {path:'',component:LlistaComponent},
-    {path:'joc',component:JocComponent},
+    {path:'joc/:id',component:JocComponent},
   ]},
   {path:'**',component:PageNotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
