@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Joc } from 'src/app/models/joc.model';
 
 @Component({
   selector: 'app-crear-joc',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CrearJocComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
-  onSubmit(data: any): void{
+  guardarJoc(data: Joc): void{
     this.http.post("http://localhost:3000/game",data).subscribe((result=>{
       console.warn('result',result);
     }))

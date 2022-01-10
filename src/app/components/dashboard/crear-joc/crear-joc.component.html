@@ -1,4 +1,4 @@
-<form #JocPost="ngForm"(ngSubmit)="onSubmit(JocPost)">
+<form #JocPost="ngForm"(ngSubmit)="guardarJoc(JocPost.value)">
     <div class="form-group">
       <label for="exampleInputEmail1">Title</label>
       <input type="text" class="form-control" id="title" placeholder="introdueix un nom d'un joc" ngModel name="title">
@@ -13,7 +13,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Url</label>
-        <input type="text" class="form-control" id="url" placeholder="https://bdshbhdudsb.com" ngModel name="url">
+        <input type="text" class="form-control" id="url" placeholder="https://bdshbhdudsb.com" ngModel name="image_url">
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
