@@ -39,8 +39,10 @@ export class LoginComponent implements OnInit {
     .subscribe(()=> this.router.navigate(['dashboard']));*/
     this.authService.singin(this.form.getRawValue())
     .subscribe((res:any)=>{
-      console.log(res)
-      localStorage.setItem('token',res.token);
+  
+      localStorage.setItem('token',res.access_token);
+      this.router.navigate(['dashboard']);
+      
     });
     
     
