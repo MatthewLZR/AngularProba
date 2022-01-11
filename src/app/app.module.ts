@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,7 @@ import { CrearJocComponent } from './components/dashboard/crear-joc/crear-joc.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 @NgModule({
@@ -39,8 +40,11 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     NoopAnimationsModule
   ],
   providers: [
+    //  JWT
      {provide: JWT_OPTIONS,useValue:JWT_OPTIONS },
-    JwtHelperService
+    JwtHelperService,
+    //TOKEN interceptior
+    {provide: HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}
   ],
   bootstrap: [AppComponent]
 })
