@@ -12,7 +12,8 @@ import { LlistaComponent } from './components/dashboard/llista/llista.component'
 import { CardComponent } from './components/dashboard/card/card.component';
 import { PageNotFoundComponent } from './components/dashboard/page-not-found/page-not-found.component';
 import { CrearJocComponent } from './components/dashboard/crear-joc/crear-joc.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     PageNotFoundComponent,
     CrearJocComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatSliderModule,
     FormsModule,
+    ReactiveFormsModule,
     NoopAnimationsModule
   ],
   providers: [],

@@ -6,12 +6,12 @@ import { IniciComponent } from './components/dashboard/inici/inici.component';
 import { JocComponent } from './components/dashboard/joc/joc.component';
 import { LlistaComponent } from './components/dashboard/llista/llista.component';
 import { PageNotFoundComponent } from './components/dashboard/page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'inici',pathMatch:'full'},
   {path:'inici',component:IniciComponent},
-
-
+  {path:'login',component:LoginComponent},
 
   {path:'dashboard',component:DashboardComponent, children:[
     {path:'',component:LlistaComponent},
