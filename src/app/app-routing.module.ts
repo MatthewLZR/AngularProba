@@ -7,6 +7,7 @@ import { JocComponent } from './components/dashboard/joc/joc.component';
 import { LlistaComponent } from './components/dashboard/llista/llista.component';
 import { PageNotFoundComponent } from './components/dashboard/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'inici',pathMatch:'full'},
@@ -17,7 +18,7 @@ const routes: Routes = [
     {path:'',component:LlistaComponent},
     {path:'joc/:id',component:JocComponent},
     {path:'afegir',component:CrearJocComponent}
-  ]},
+  ],canActivate:[AuthGuard]},
   {path:'**',component:PageNotFoundComponent}
 ];
 

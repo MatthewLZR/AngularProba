@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './components/dashboard/page-not-found/pag
 import { CrearJocComponent } from './components/dashboard/crear-joc/crear-joc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -37,7 +38,10 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  providers: [
+     {provide: JWT_OPTIONS,useValue:JWT_OPTIONS },
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

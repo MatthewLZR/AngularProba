@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
   
       localStorage.setItem('token',res.access_token);
       this.router.navigate(['dashboard']);
-      
     });
     
     
