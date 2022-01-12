@@ -18,8 +18,12 @@ export class AuthService {
 
   isAuth():boolean{
 
+      
+    if (!localStorage.getItem("token")) {
+      alert('inicia sessió en login')
+      return false;
+    }
     const token =  JSON.stringify(localStorage.getItem('token'));
-    console.log(token);
     
     if(this.jwtHelperService.isTokenExpired(token) || !localStorage.getItem('token')){
       return false;
